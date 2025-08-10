@@ -17,7 +17,7 @@ export type Post = {
   author: { name: string; avatar: string };
 };
 
-export function PostCard({ post, className }: { post: Post; className?: string }) {
+export function PostCard({ post, className, isEager = false }: { post: Post; className?: string; isEager?: boolean }) {
   const shouldAnimate = false; // Disable list item fade/slide animations to avoid flash perception
 
   return (
@@ -40,7 +40,8 @@ export function PostCard({ post, className }: { post: Post; className?: string }
             fill
             className="object-cover transform-gpu [animation:none]"
             sizes="(min-width: 1280px) 33vw, (min-width: 768px) 50vw, 100vw"
-            priority={false}
+            // Eager load first items above the fold to avoid placeholder swap flash on first paint
+            priority={isEager}
           />
           <div className="absolute top-3 left-3">
             <Badge>{post.category}</Badge>

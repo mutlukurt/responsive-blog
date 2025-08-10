@@ -13,8 +13,8 @@ export function PostList({ posts }: { posts: PostFrontmatter[] }) {
         <ViewToggle />
       </div>
       <div className={view === "grid" ? "grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6" : "grid grid-cols-1 gap-4"}>
-        {posts.map((p) => (
-          <PostCard key={p.slug} post={p} />
+        {posts.map((p, i) => (
+          <PostCard key={p.slug} post={p} isEager={i < 6} />
         ))}
       </div>
     </div>
