@@ -43,7 +43,7 @@ export function HeroFeatured({
             src={post.cover}
             alt=""
             fill
-            className="object-cover opacity-100 transition-opacity transition-transform duration-200 ease-out motion-reduce:transition-none hover:opacity-95 focus-within:opacity-95 active:opacity-95 md:hover:scale-[1.01] md:focus-within:scale-[1.005] will-change-transform"
+            className="object-cover opacity-100 transition-opacity md:transition-transform duration-200 ease-out motion-reduce:transition-none hover:opacity-95 md:hover:scale-[1.01] will-change-transform"
             sizes="(min-width: 768px) 50vw, 100vw"
             priority
           />
