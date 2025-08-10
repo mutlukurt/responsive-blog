@@ -38,7 +38,7 @@ export function PostCard({ post, className, isEager = false }: { post: Post; cla
             src={post.cover}
             alt=""
             fill
-            className="object-cover transform-gpu opacity-100 transition-opacity transition-transform duration-200 ease-out motion-reduce:transition-none group-hover:opacity-90 group-active:opacity-90 group-focus-within:opacity-90 group-hover:scale-[1.02] active:scale-[0.99] focus-within:scale-[1.01] will-change-transform [animation:none]"
+            className="object-cover transform-gpu opacity-100 transition-opacity transition-transform duration-200 ease-out motion-reduce:transition-none group-hover:opacity-90 group-active:opacity-90 group-focus-within:opacity-90 md:group-hover:scale-[1.02] md:focus-within:scale-[1.01] will-change-transform [animation:none]"
             sizes="(min-width: 1280px) 33vw, (min-width: 768px) 50vw, 100vw"
             // Eager load first items above the fold to avoid placeholder swap flash on first paint
             priority={isEager}
