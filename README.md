@@ -24,6 +24,12 @@ Design tokens and theme live in `app/globals.css` and can be tweaked without tou
 
 ## Changelog
 
+- v0.6.0
+  - Footer lisans metni: “MIT License” linki eklendi
+  - RSS görünürlüğü: Header, Footer ve Mobil menüye `RSS` linki eklendi
+  - RSS autodiscovery: `<link rel="alternate" type="application/rss+xml">` head içine eklendi
+  - Dev deneyimi: `npm run dev:auto` komutu ile sunucu 3002’de açılır ve tarayıcı otomatik açılır
+
 - v0.5.0
   - Fake auth (login/register) with header integration
   - RSS (`/feed.xml`) and JSON feed (`/feed.json`)
