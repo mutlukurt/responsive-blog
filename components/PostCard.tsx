@@ -3,8 +3,7 @@ import { ImageWithFallback as Image } from "@/components/ImageWithFallback";
 import Link from "next/link";
 import { Badge } from "@/components/Badge";
 import { formatDate, cn } from "@/lib/utils";
-import { motion, useReducedMotion } from "framer-motion";
-import { useEffect, useState } from "react";
+import { motion } from "framer-motion";
 
 export type Post = {
   slug: string;
@@ -19,24 +18,14 @@ export type Post = {
 };
 
 export function PostCard({ post, className }: { post: Post; className?: string }) {
-  const prefersReduced = useReducedMotion();
-  const [isMobile, setIsMobile] = useState(false);
-  useEffect(() => {
-    const m = window.matchMedia("(max-width: 640px)");
-    const set = () => setIsMobile(m.matches);
-    set();
-    m.addEventListener("change", set);
-    return () => m.removeEventListener("change", set);
-  }, []);
-
-  const shouldAnimate = !(prefersReduced || isMobile);
+  const shouldAnimate = false; // Disable list item fade/slide animations to avoid flash perception
 
   return (
     <motion.article
-      initial={shouldAnimate ? { opacity: 0, y: 8 } : false}
-      whileInView={shouldAnimate ? { opacity: 1, y: 0 } : undefined}
-      viewport={shouldAnimate ? { once: true, margin: "-50px" } : undefined}
-      transition={shouldAnimate ? { duration: 0.35, ease: "easeOut" } : undefined}
+      initial={false}
+      whileInView={undefined}
+      viewport={undefined}
+      transition={undefined}
       style={{ contentVisibility: "auto" }}
       className={cn(
         "group overflow-hidden rounded-2xl bg-surface border border-border shadow-sm hover:shadow-lg transition will-change-transform",

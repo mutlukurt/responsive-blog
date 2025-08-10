@@ -42,6 +42,11 @@ body {
   -webkit-tap-highlight-color: transparent;
 }
 
+/* Avoid global fade flashes by removing transitions on theme/route change */
+* {
+  transition: color 150ms ease, background-color 150ms ease, border-color 150ms ease;
+}
+
 /* Focus ring */
 :where(a, button, input, select, textarea, [role="button"]) {
   outline: none;
