@@ -29,7 +29,7 @@ export function InteractiveImage({ className, ...rest }: InteractiveImageProps) 
       <Image
         {...rest}
         className={cn(
-          "object-cover transform-gpu opacity-100 will-change-transform transition-opacity transition-transform duration-[500ms] md:duration-[700ms] ease-out [animation:none]",
+          "object-cover transform-gpu opacity-100 will-change-transform transition-opacity transition-transform duration-[1200ms] md:duration-[1600ms] ease-[cubic-bezier(0.2,0.8,0.2,1)] [animation:none]",
           hovered && "scale-[1.06] md:scale-[1.08]",
           className
         )}
