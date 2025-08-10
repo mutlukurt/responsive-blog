@@ -1,26 +1,105 @@
 @import "tailwindcss";
 
+/* Design tokens (light/dark) */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --bg: #fafafa;
+  --surface: #ffffff;
+  --text: #111827;
+  --muted: #4b5563;
+  --accent-1: #3b82f6;
+  --accent-2: #f97316;
+  --border: #e5e7eb;
+}
+
+.dark {
+  --bg: #0b1020;
+  --surface: #0f172a;
+  --text: #e5e7eb;
+  --muted: #94a3b8;
+  --accent-1: #60a5fa;
+  --accent-2: #fb923c;
+  --border: #1f2937;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-sans: var(--font-inter);
+  --color-background: var(--bg);
+  --color-surface: var(--surface);
+  --color-text: var(--text);
+  --color-muted: var(--muted);
+  --color-accent-1: var(--accent-1);
+  --color-accent-2: var(--accent-2);
+  --color-border: var(--border);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html, body {
+  height: 100%;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--bg);
+  color: var(--text);
+}
+
+/* Focus ring */
+:where(a, button, input, select, textarea, [role="button"]) {
+  outline: none;
+}
+:where(a, button, input, select, textarea, [role="button"])::selection {
+  background: color-mix(in oklab, var(--accent-1) 30%, transparent);
+}
+:where(a, button, input, select, textarea, [role="button"]):focus-visible {
+  outline: 2px solid var(--accent-1);
+  outline-offset: 2px;
+  border-radius: 0.5rem;
+}
+
+/* Prose defaults */
+@layer components {
+  .prose {
+    max-width: 65ch;
+  }
+  .prose :where(h1, h2, h3) {
+    color: var(--text);
+  }
+  .prose :where(p) {
+    color: var(--muted);
+  }
+}
+
+/* Minimal Prism-like code colors */
+@layer base {
+  :root {
+    --code-bg: color-mix(in oklab, var(--surface) 85%, black);
+  }
+  pre code[class*="language-"], code[class*="language-"] {
+    color: var(--text);
+  }
+  .token.comment { color: #94a3b8; }
+  .token.keyword { color: #3b82f6; }
+  .token.string { color: #16a34a; }
+  .token.function { color: #f97316; }
+}
+
+/* Skip link utility */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+.sr-only.focus\:not-sr-only:focus {
+  position: static;
+  width: auto;
+  height: auto;
+  padding: 0.25rem 0.5rem;
+  margin: 0;
+  overflow: visible;
+  clip: auto;
+  white-space: normal;
 }

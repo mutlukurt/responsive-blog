@@ -1,0 +1,82 @@
+[
+  {
+    "slug": "modern-typography-in-ui",
+    "title": "Modern Typography in UI",
+    "excerpt": "Principles for readable, elegant interfaces.",
+    "cover": "https://images.unsplash.com/photo-1526318472351-c75fcf070305?q=80&w=1200&auto=format&fit=crop",
+    "date": "2025-07-10",
+    "readTime": 6,
+    "category": "Design",
+    "tags": ["Typography", "UX"],
+    "author": { "name": "Mutlu Kurt", "avatar": "https://i.pravatar.cc/64?img=12" },
+    "featured": true
+  },
+  {
+    "slug": "accessible-components-with-tailwind",
+    "title": "Building Accessible Components with Tailwind",
+    "excerpt": "Practical patterns for inclusive design.",
+    "cover": "https://images.unsplash.com/photo-1515879218367-8466d910aaa4?q=80&w=1200&auto=format&fit=crop",
+    "date": "2025-06-22",
+    "readTime": 7,
+    "category": "Frontend",
+    "tags": ["Accessibility", "Tailwind"],
+    "author": { "name": "Mutlu Kurt", "avatar": "https://i.pravatar.cc/64?img=32" }
+  },
+  {
+    "slug": "nextjs-mdx-best-practices",
+    "title": "Next.js + MDX Best Practices",
+    "excerpt": "Compose rich content with MDX in the App Router.",
+    "cover": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=1200&auto=format&fit=crop",
+    "date": "2025-05-11",
+    "readTime": 8,
+    "category": "Frontend",
+    "tags": ["Next.js", "MDX"],
+    "author": { "name": "Mutlu Kurt", "avatar": "https://i.pravatar.cc/64?img=14" }
+  },
+  {
+    "slug": "design-systems-that-scale",
+    "title": "Design Systems that Scale",
+    "excerpt": "Foundations for sustainable design at scale.",
+    "cover": "https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=1200&auto=format&fit=crop",
+    "date": "2025-04-02",
+    "readTime": 9,
+    "category": "Design",
+    "tags": ["Design System", "Guidelines"],
+    "author": { "name": "Mutlu Kurt", "avatar": "https://i.pravatar.cc/64?img=9" }
+  },
+  {
+    "slug": "productive-developer-routines",
+    "title": "Productive Developer Routines",
+    "excerpt": "Habits and workflows that save hours.",
+    "cover": "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?q=80&w=1200&auto=format&fit=crop",
+    "date": "2025-03-20",
+    "readTime": 5,
+    "category": "Productivity",
+    "tags": ["Habits", "Time Management"],
+    "author": { "name": "Mutlu Kurt", "avatar": "https://i.pravatar.cc/64?img=21" }
+  },
+  {
+    "slug": "framer-motion-for-microinteractions",
+    "title": "Framer Motion for Microinteractions",
+    "excerpt": "Delightful animations without sacrificing performance.",
+    "cover": "https://images.unsplash.com/photo-1496307042754-b4aa456c4a2d?q=80&w=1200&auto=format&fit=crop",
+    "date": "2025-02-14",
+    "readTime": 6,
+    "category": "Frontend",
+    "tags": ["Framer Motion", "UX"],
+    "author": { "name": "Mutlu Kurt", "avatar": "https://i.pravatar.cc/64?img=37" }
+  },
+  {
+    "slug": "writing-better-commit-messages",
+    "title": "Writing Better Commit Messages",
+    "excerpt": "Communicate intent with clear, actionable commits.",
+    "cover": "https://images.unsplash.com/photo-1497493292307-31c376b6e479?q=80&w=1200&auto=format&fit=crop",
+    "date": "2025-01-05",
+    "readTime": 4,
+    "category": "Productivity",
+    "tags": ["Git", "Communication"],
+    "author": { "name": "Mutlu Kurt", "avatar": "https://i.pravatar.cc/64?img=7" }
+  }
+]
+
+
