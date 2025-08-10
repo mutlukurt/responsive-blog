@@ -9,6 +9,8 @@ import { Newsletter } from "@/components/Newsletter";
 
 type Props = { searchParams: Promise<Record<string, string | string[] | undefined>> };
 
+export const dynamic = "force-static";
+
 export default async function BlogIndex({ searchParams }: Props) {
   const sp = await searchParams;
   const q = (sp.q as string) ?? "";
@@ -37,7 +39,7 @@ export default async function BlogIndex({ searchParams }: Props) {
       </section>
       <aside className="space-y-8" aria-label="Sidebar">
         <BlogFilters />
-        <Sidebar />
+        <Sidebar posts={getAllPosts()} />
         <Newsletter />
       </aside>
     </div>

@@ -1,8 +1,10 @@
 import type { MetadataRoute } from "next";
 import { getAllPosts } from "@/lib/posts";
 
+export const dynamic = "force-static";
+
 export default function sitemap(): MetadataRoute.Sitemap {
-  const base = "https://example.com";
+  const base = process.env.NEXT_PUBLIC_SITE_URL || "https://example.com";
   const staticRoutes = ["/", "/blog", "/about", "/contact"].map((path) => ({
     url: base + path,
     changeFrequency: "weekly" as const,

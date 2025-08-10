@@ -41,7 +41,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     },
     async register({ name, email }) {
       const u: AuthUser = {
-        name: name || email.split("@")[0] ?? "User",
+        name: name ? name : (email.split("@")[0] || "User"),
         email,
         avatar: `https://i.pravatar.cc/64?u=${encodeURIComponent(email)}`,
       };

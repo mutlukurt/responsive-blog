@@ -1,7 +1,14 @@
-import { getPostsByCategory, type PostFrontmatter } from "@/lib/posts";
+import { getPostsByCategory, type PostFrontmatter, getAllPosts } from "@/lib/posts";
 import { PostList } from "@/components/PostList";
 
 type Props = { params: Promise<{ slug: string }> };
+
+export const dynamic = "force-static";
+
+export async function generateStaticParams() {
+  const categories = Array.from(new Set(getAllPosts().map((p) => p.category)));
+  return categories.map((c) => ({ slug: c }));
+}
 
 export default async function CategoryPage({ params }: Props) {
   const { slug } = await params;
