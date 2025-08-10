@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0">
+<channel>
+  <title>Mutlu’s Blog</title>
+  <link>https://example.com</link>
+  <description>Modern, accessible, and fast blog about Design, Frontend, and Productivity.</description>
+  
+  <item>
+    <title><![CDATA[Modern Typography in UI]]></title>
+    <link>https://example.com/blog/modern-typography-in-ui</link>
+    <guid>https://example.com/blog/modern-typography-in-ui</guid>
+    <pubDate>Thu, 10 Jul 2025 00:00:00 GMT</pubDate>
+    <description><![CDATA[Principles for readable, elegant interfaces.]]></description>
+  </item>
+
+  <item>
+    <title><![CDATA[Building Accessible Components with Tailwind]]></title>
+    <link>https://example.com/blog/accessible-components-with-tailwind</link>
+    <guid>https://example.com/blog/accessible-components-with-tailwind</guid>
+    <pubDate>Sun, 22 Jun 2025 00:00:00 GMT</pubDate>
+    <description><![CDATA[Practical patterns for inclusive design.]]></description>
+  </item>
+
+  <item>
+    <title><![CDATA[Next.js + MDX Best Practices]]></title>
+    <link>https://example.com/blog/nextjs-mdx-best-practices</link>
+    <guid>https://example.com/blog/nextjs-mdx-best-practices</guid>
+    <pubDate>Sun, 11 May 2025 00:00:00 GMT</pubDate>
+    <description><![CDATA[Compose rich content with MDX in the App Router.]]></description>
+  </item>
+
+  <item>
+    <title><![CDATA[Design Systems that Scale]]></title>
+    <link>https://example.com/blog/design-systems-that-scale</link>
+    <guid>https://example.com/blog/design-systems-that-scale</guid>
+    <pubDate>Wed, 02 Apr 2025 00:00:00 GMT</pubDate>
+    <description><![CDATA[Foundations for sustainable design at scale.]]></description>
+  </item>
+
+  <item>
+    <title><![CDATA[Productive Developer Routines]]></title>
+    <link>https://example.com/blog/productive-developer-routines</link>
+    <guid>https://example.com/blog/productive-developer-routines</guid>
+    <pubDate>Thu, 20 Mar 2025 00:00:00 GMT</pubDate>
+    <description><![CDATA[Habits and workflows that save hours.]]></description>
+  </item>
+
+  <item>
+    <title><![CDATA[Framer Motion for Microinteractions]]></title>
+    <link>https://example.com/blog/framer-motion-for-microinteractions</link>
+    <guid>https://example.com/blog/framer-motion-for-microinteractions</guid>
+    <pubDate>Fri, 14 Feb 2025 00:00:00 GMT</pubDate>
+    <description><![CDATA[Delightful animations without sacrificing performance.]]></description>
+  </item>
+
+  <item>
+    <title><![CDATA[Writing Better Commit Messages]]></title>
+    <link>https://example.com/blog/writing-better-commit-messages</link>
+    <guid>https://example.com/blog/writing-better-commit-messages</guid>
+    <pubDate>Sun, 05 Jan 2025 00:00:00 GMT</pubDate>
+    <description><![CDATA[Communicate intent with clear, actionable commits.]]></description>
+  </item>
+</channel>
+</rss>
