@@ -1,5 +1,5 @@
 "use client";
-import { ImageWithFallback as Image } from "@/components/ImageWithFallback";
+import { InteractiveImage as Image } from "@/components/InteractiveImage";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { Button } from "@/components/Button";

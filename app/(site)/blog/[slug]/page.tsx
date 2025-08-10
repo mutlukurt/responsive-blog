@@ -6,7 +6,7 @@ import rehypeSlug from "rehype-slug";
 import rehypeAutolinkHeadings from "rehype-autolink-headings";
 import rehypePrism from "rehype-prism-plus";
 import remarkGfm from "remark-gfm";
-import { ImageWithFallback as Image } from "@/components/ImageWithFallback";
+import { InteractiveImage as Image } from "@/components/InteractiveImage";
 import Link from "next/link";
 import { TableOfContents } from "@/components/TableOfContents";
 import { CommentThread } from "@/components/CommentThread";
