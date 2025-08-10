@@ -39,6 +39,7 @@ html, body {
 body {
   background-color: var(--bg);
   color: var(--text);
+  -webkit-tap-highlight-color: transparent;
 }
 
 /* Focus ring */

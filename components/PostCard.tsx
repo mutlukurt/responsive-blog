@@ -3,7 +3,8 @@ import { ImageWithFallback as Image } from "@/components/ImageWithFallback";
 import Link from "next/link";
 import { Badge } from "@/components/Badge";
 import { formatDate, cn } from "@/lib/utils";
-import { motion } from "framer-motion";
+import { motion, useReducedMotion } from "framer-motion";
+import { useEffect, useState } from "react";
 
 export type Post = {
   slug: string;
@@ -18,12 +19,25 @@ export type Post = {
 };
 
 export function PostCard({ post, className }: { post: Post; className?: string }) {
+  const prefersReduced = useReducedMotion();
+  const [isMobile, setIsMobile] = useState(false);
+  useEffect(() => {
+    const m = window.matchMedia("(max-width: 640px)");
+    const set = () => setIsMobile(m.matches);
+    set();
+    m.addEventListener("change", set);
+    return () => m.removeEventListener("change", set);
+  }, []);
+
+  const shouldAnimate = !(prefersReduced || isMobile);
+
   return (
     <motion.article
-      initial={{ opacity: 0, y: 8 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: "-50px" }}
-      transition={{ duration: 0.4, ease: "easeOut" }}
+      initial={shouldAnimate ? { opacity: 0, y: 8 } : false}
+      whileInView={shouldAnimate ? { opacity: 1, y: 0 } : undefined}
+      viewport={shouldAnimate ? { once: true, margin: "-50px" } : undefined}
+      transition={shouldAnimate ? { duration: 0.35, ease: "easeOut" } : undefined}
+      style={{ contentVisibility: "auto" }}
       className={cn(
         "group overflow-hidden rounded-2xl bg-surface border border-border shadow-sm hover:shadow-lg transition will-change-transform",
         className
@@ -35,7 +49,7 @@ export function PostCard({ post, className }: { post: Post; className?: string }
             src={post.cover}
             alt=""
             fill
-            className="object-cover transition-transform duration-300 group-hover:scale-[1.01]"
+            className="object-cover transition-transform duration-300 group-hover:scale-[1.01] transform-gpu"
             sizes="(min-width: 1280px) 33vw, (min-width: 768px) 50vw, 100vw"
             priority={false}
           />

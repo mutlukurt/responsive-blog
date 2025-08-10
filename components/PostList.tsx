@@ -8,7 +8,7 @@ export function PostList({ posts }: { posts: PostFrontmatter[] }) {
   const sp = useSearchParams();
   const view = (sp.get("view") ?? "grid") as "grid" | "list";
   return (
-    <div className="space-y-4">
+    <div className="space-y-4" style={{ containIntrinsicSize: "1px 1000px" }}>
       <div className="flex items-center justify-end">
         <ViewToggle />
       </div>
