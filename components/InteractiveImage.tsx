@@ -15,9 +15,11 @@ export function InteractiveImage({ className, ...rest }: InteractiveImageProps) 
   const onEnter = useCallback(() => setHovered(true), []);
   const onLeave = useCallback(() => setHovered(false), []);
 
+  const zoomTargetClass = "[--zoom-to:1.08] md:[--zoom-to:1.12]";
+
   return (
     <div
-      className="contents"
+      className={zoomTargetClass}
       onPointerEnter={onEnter}
       onPointerLeave={onLeave}
       onTouchStart={onEnter}
@@ -29,8 +31,8 @@ export function InteractiveImage({ className, ...rest }: InteractiveImageProps) 
       <Image
         {...rest}
         className={cn(
-          "object-cover transform-gpu opacity-100 will-change-transform transition-opacity transition-transform duration-[1200ms] md:duration-[1600ms] ease-[cubic-bezier(0.2,0.8,0.2,1)] [animation:none]",
-          hovered && "scale-[1.06] md:scale-[1.08]",
+          "object-cover transform-gpu opacity-100 will-change-transform [animation-duration:1600ms] md:[animation-duration:2200ms] [animation-timing-function:cubic-bezier(0.2,0.8,0.2,1)]",
+          hovered ? "animate-[zoom-in-slow_forwards]" : "animate-[zoom-out-slow_forwards]",
           className
         )}
       />

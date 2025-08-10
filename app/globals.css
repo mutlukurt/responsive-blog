@@ -77,6 +77,17 @@ body {
   }
 }
 
+/* Ken Burns style zoom animation using CSS variable for target scale */
+@keyframes zoom-in-slow {
+  from { transform: scale(1); }
+  to { transform: scale(var(--zoom-to, 1.1)); }
+}
+
+@keyframes zoom-out-slow {
+  from { transform: scale(var(--zoom-to, 1.1)); }
+  to { transform: scale(1); }
+}
+
 /* Minimal Prism-like code colors */
 @layer base {
   :root {
