@@ -1,5 +1,5 @@
 import { notFound } from "next/navigation";
-import { getAdjacentPosts, getPostBySlug } from "@/lib/posts";
+import { getAdjacentPosts, getPostBySlug, getAllPosts } from "@/lib/posts";
 import { buildPostMeta } from "@/lib/seo";
 import { MDXRemote } from "next-mdx-remote/rsc";
 import rehypeSlug from "rehype-slug";
@@ -15,6 +15,13 @@ import { ShareBar } from "@/components/ShareBar";
 import { mdxComponents } from "@/components/MDXComponents";
 
 type Props = { params: Promise<{ slug: string }> };
+
+export const dynamic = "force-static";
+
+export async function generateStaticParams() {
+  const posts = getAllPosts();
+  return posts.map((p) => ({ slug: p.slug }));
+}
 
 export async function generateMetadata({ params }: Props) {
   const { slug } = await params;
@@ -42,7 +49,7 @@ export default async function BlogPostPage({ params }: Props) {
         <h1 className="text-3xl font-bold tracking-tight">{post.title}</h1>
         <p className="text-muted">{post.excerpt}</p>
         <div className="relative aspect-[16/9] w-full overflow-hidden rounded-2xl border border-border bg-[url('/images/placeholder.svg')] bg-cover bg-center">
-          <Image src={post.cover} alt="" fill className="object-cover" priority />
+          <Image src={post.cover} alt="" fill className="object-cover [animation:none]" priority />
         </div>
       </header>
 

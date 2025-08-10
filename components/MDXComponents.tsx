@@ -60,7 +60,7 @@ export function Figure({ src, alt, caption }: { src: string; alt: string; captio
   return (
     <figure className="my-6">
       <div className="relative aspect-[16/9] w-full overflow-hidden rounded-xl border border-border">
-        <Image src={src} alt={alt} fill className="object-cover" />
+        <Image src={src} alt={alt} fill className="object-cover [animation:none]" />
       </div>
       {caption && (
         <figcaption className="mt-2 text-center text-xs text-muted">{caption}</figcaption>
