@@ -37,7 +37,7 @@ export function HeroFeatured({
           initial={false}
           animate={undefined}
           transition={undefined}
-          className="relative min-h-64 bg-[url('/images/placeholder.svg')] bg-cover bg-center"
+          className="relative min-h-64 overflow-hidden rounded-2xl md:rounded-l-none md:rounded-r-2xl bg-[url('/images/placeholder.svg')] bg-cover bg-center"
         >
           <Image
             src={post.cover}

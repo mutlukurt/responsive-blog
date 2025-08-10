@@ -33,7 +33,7 @@ export function PostCard({ post, className, isEager = false }: { post: Post; cla
       )}
     >
       <Link href={`/blog/${post.slug}`} className="block">
-        <div className="relative aspect-[16/9] overflow-hidden bg-[url('/images/placeholder.svg')] bg-cover bg-center">
+        <div className="relative aspect-[16/9] overflow-hidden rounded-2xl bg-[url('/images/placeholder.svg')] bg-cover bg-center">
           <Image
             src={post.cover}
             alt=""
