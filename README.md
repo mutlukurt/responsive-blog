@@ -1,3 +1,9 @@
+# Responsive Blog
+
+[![Live Demo](https://img.shields.io/badge/Live%20Demo-Open%20Site-3B82F6?logo=githubpages)](https://mutlukurt.github.io/responsive-blog/)
+
+Live site: https://mutlukurt.github.io/responsive-blog/
+
 ## Content Management (local)
 
 All blog content lives in the `content/` folder and images in `public/images/`.
