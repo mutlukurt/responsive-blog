@@ -35,6 +35,10 @@ export const metadata: Metadata = {
       "application/json": "/feed.json",
     },
   },
+  other: {
+    // Autodiscovery for RSS in classic user agents
+    "link:alternate:rss": "<link rel=\"alternate\" type=\"application/rss+xml\" title=\"RSS\" href=\"/feed.xml\" />",
+  },
   openGraph: {
     type: "website",
     title: "Mutlu’s Blog",

@@ -54,6 +54,7 @@ export function Header() {
           <Link className="hover:underline" href="/categories/design">Categories</Link>
           <Link className="hover:underline" href="/about">About</Link>
           <Link className="hover:underline" href="/contact">Contact</Link>
+          <Link className="hover:underline" href="/feed.xml" target="_blank" rel="noopener noreferrer">RSS</Link>
         </nav>
         <div className="ml-auto md:ml-0 hidden sm:flex items-center gap-3">
           <Search ref={searchRef} placeholder="Search posts… (/ to focus)" onSubmit={(q) => router.push(`/blog?q=${encodeURIComponent(q)}`)} />

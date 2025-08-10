@@ -36,6 +36,7 @@ export function MobileMenu({ open, onClose }: { open: boolean; onClose: () => vo
           <li><Link className="block rounded-lg px-2 py-2 hover:bg-background" href="/categories/design">Categories</Link></li>
           <li><Link className="block rounded-lg px-2 py-2 hover:bg-background" href="/about">About</Link></li>
           <li><Link className="block rounded-lg px-2 py-2 hover:bg-background" href="/contact">Contact</Link></li>
+          <li><Link className="block rounded-lg px-2 py-2 hover:bg-background" href="/feed.xml" target="_blank" rel="noopener noreferrer">RSS</Link></li>
         </ul>
         <div className="mt-4">
           <AuthButton />
