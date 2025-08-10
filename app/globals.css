@@ -51,6 +51,10 @@ body {
 :where(a, button, input, select, textarea, [role="button"]) {
   outline: none;
 }
+:root {
+  /* Disable image reveal animations across the site */
+  --reveal: none;
+}
 :where(a, button, input, select, textarea, [role="button"])::selection {
   background: color-mix(in oklab, var(--accent-1) 30%, transparent);
 }
