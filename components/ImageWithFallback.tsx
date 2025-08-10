@@ -9,14 +9,19 @@ const BLUR_DATA_URL =
 export function ImageWithFallback(props: ImageProps & { fallbackSrc?: string }) {
   const { src, fallbackSrc = "/images/placeholder.svg", alt, ...rest } = props;
   const [source, setSource] = useState(src);
+  const isSmall = typeof rest.width === "number" && typeof rest.height === "number" && (rest.width < 40 || rest.height < 40);
+  // On mobile remove blur placeholder entirely to avoid flash; also disable for all images if requested
+  const isMobile = typeof window !== "undefined" && window.matchMedia && window.matchMedia("(max-width: 640px)").matches;
+
   return (
     <Image
       {...rest}
       alt={alt}
       src={source}
       onError={() => setSource(fallbackSrc)}
-      placeholder={typeof rest.width === "number" && typeof rest.height === "number" && (rest.width >= 40 && rest.height >= 40) ? "blur" : undefined}
-      blurDataURL={typeof rest.width === "number" && typeof rest.height === "number" && (rest.width >= 40 && rest.height >= 40) ? BLUR_DATA_URL : undefined}
+      placeholder={isMobile || isSmall ? undefined : "empty"}
+      blurDataURL={undefined}
+      priority={rest.priority}
     />
   );
 }

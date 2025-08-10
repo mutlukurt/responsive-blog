@@ -38,7 +38,7 @@ export function PostCard({ post, className }: { post: Post; className?: string }
             src={post.cover}
             alt=""
             fill
-            className="object-cover transition-transform duration-300 group-hover:scale-[1.01] transform-gpu"
+            className="object-cover transform-gpu"
             sizes="(min-width: 1280px) 33vw, (min-width: 768px) 50vw, 100vw"
             priority={false}
           />
