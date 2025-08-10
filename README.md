@@ -24,6 +24,12 @@ Design tokens and theme live in `app/globals.css` and can be tweaked without tou
 
 ## Changelog
 
+- v0.7.0
+  - Interactive cover zoom (hover/touch) with cinematic keyframe animation
+    - Works on mobile/tablet (touch-and-hold) and desktop (hover)
+    - Smooth Ken Burns-style in/out; respects prefers-reduced-motion
+    - Clipped inside cards/hero (no overflow while zooming)
+
 - v0.6.0
   - Footer lisans metni: “MIT License” linki eklendi
   - RSS görünürlüğü: Header, Footer ve Mobil menüye `RSS` linki eklendi
