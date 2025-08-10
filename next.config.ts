@@ -1,5 +1,7 @@
 import type { NextConfig } from "next";
 
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH || ""; // e.g. "/responsive-blog" for GitHub Pages
+
 const nextConfig: NextConfig = {
   images: {
     remotePatterns: [
@@ -10,7 +12,10 @@ const nextConfig: NextConfig = {
       { protocol: "https", hostname: "avatars.githubusercontent.com" },
     ],
     formats: ["image/avif", "image/webp"],
+    unoptimized: !!basePath, // required for static export on GitHub Pages
   },
+  basePath: basePath || undefined,
+  assetPrefix: basePath ? `${basePath}/` : undefined,
 };
 
 export default nextConfig;

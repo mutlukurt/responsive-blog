@@ -44,10 +44,10 @@ export function PostCard({ post, className }: { post: Post; className?: string }
           </div>
         </div>
         <div className="p-4">
-          <h3 className="text-base font-semibold line-clamp-2 group-hover:underline">
+          <h3 className="text-base sm:text-lg font-semibold line-clamp-2 group-hover:underline">
             {post.title}
           </h3>
-          <p className="mt-2 text-sm text-muted line-clamp-3 min-h-[3.5rem]">{post.excerpt}</p>
+          <p className="mt-2 text-sm sm:text-[0.95rem] text-muted line-clamp-3 min-h-[3.5rem]">{post.excerpt}</p>
           <div className="mt-4 flex items-center gap-3 text-xs text-muted">
             <Image
               src={post.author.avatar}

@@ -25,7 +25,7 @@ export default async function BlogIndex({ searchParams }: Props) {
   const paged = posts.slice((page - 1) * PAGE_SIZE, page * PAGE_SIZE);
 
   return (
-    <div className="grid grid-cols-1 lg:grid-cols-[1fr_320px] gap-8">
+    <div className="grid grid-cols-1 lg:grid-cols-[1fr_320px] gap-6 lg:gap-8">
       <section className="space-y-6">
         <h1 className="text-2xl font-bold">All Posts</h1>
         {paged.length === 0 ? <EmptyState title="No results" description="Try a different search or category." /> : <PostList posts={paged} />}

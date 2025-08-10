@@ -7,6 +7,8 @@ import { Search } from "@/components/Search";
 import { CommandPalette } from "@/components/CommandPalette";
 import { useRouter } from "next/navigation";
 import { cn } from "@/lib/utils";
+import { Menu } from "lucide-react";
+import { MobileMenu } from "@/components/MobileMenu";
 import { AuthButton } from "@/components/AuthButton";
 
 export function Header() {
@@ -42,7 +44,7 @@ export function Header() {
       )}
       role="banner"
     >
-      <div className="mx-auto max-w-7xl flex items-center gap-4 px-4 sm:px-6 lg:px-8 h-16">
+      <div className="mx-auto max-w-7xl flex items-center gap-3 sm:gap-4 px-3 sm:px-6 lg:px-8 h-16">
         <Link href="/" className="font-bold text-lg tracking-tight hover:underline">
           Mutlu’s Blog
         </Link>
@@ -53,13 +55,17 @@ export function Header() {
           <Link className="hover:underline" href="/about">About</Link>
           <Link className="hover:underline" href="/contact">Contact</Link>
         </nav>
-        <div className="ml-auto md:ml-0 flex items-center gap-3">
+        <div className="ml-auto md:ml-0 hidden sm:flex items-center gap-3">
           <Search ref={searchRef} placeholder="Search posts… (/ to focus)" onSubmit={(q) => router.push(`/blog?q=${encodeURIComponent(q)}`)} />
           <ThemeToggle />
           <AuthButton />
         </div>
+        <button className="sm:hidden ml-auto inline-flex items-center justify-center h-9 w-9 rounded-lg border border-border" aria-label="Open menu" onClick={() => setIsPaletteOpen(true)}>
+          <Menu size={18} />
+        </button>
       </div>
       <CommandPalette open={isPaletteOpen} onOpenChange={setIsPaletteOpen} />
+      <MobileMenu open={isPaletteOpen} onClose={() => setIsPaletteOpen(false)} />
     </header>
   );
 }
